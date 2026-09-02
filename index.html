@@ -2,30 +2,34 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>CRM Screen Pop</title>
+    <title>CRM ScreenPop</title>
 </head>
 
 <body>
 
-<h2>CRM Screen Pop</h2>
+<h2>CRM ScreenPop Activo</h2>
+
+<script srckg.com/@webex/embedded-app-frameworkscript>
 
 <script>
 
-let crmWindow = null;
+async function init() {
 
-function openCRM(numero){
+    try {
 
-    const url =
-      "https://meucrm.pt/contacto?telefone=" +
-      encodeURIComponent(numero);
+        await window.webex.app.initialize();
 
-    if (!crmWindow || crmWindow.closed) {
-        crmWindow = window.open(url, "CRM");
-    } else {
-        crmWindow.location = url;
-        crmWindow.focus();
+        console.log("Webex iniciado");
+
+    } catch(err) {
+
+        console.error(err);
+
     }
+
 }
+
+init();
 
 </script>
 
