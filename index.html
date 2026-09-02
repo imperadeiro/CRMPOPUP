@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CRM Screen Pop</title>
+</head>
+
+<body>
+
+<h2>CRM Screen Pop</h2>
+
+<script>
+
+let crmWindow = null;
+
+function openCRM(numero){
+
+    const url =
+      "https://meucrm.pt/contacto?telefone=" +
+      encodeURIComponent(numero);
+
+    if (!crmWindow || crmWindow.closed) {
+        crmWindow = window.open(url, "CRM");
+    } else {
+        crmWindow.location = url;
+        crmWindow.focus();
+    }
+}
+
+</script>
+
+</body>
+</html>
