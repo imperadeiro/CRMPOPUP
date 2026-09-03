@@ -1,26 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <title>CRM Popup</title>
-</head>
 <body>
 
-<h1>CRM Popup</h1>
+<h1>Diagnóstico</h1>
 
-<div id="status">A iniciar...</div>
-
-<script src="https://unpkg.com/@webex/embedded-app-framework/dist/webex-embedded-app-sdk.umd.js"></script>
+<div id="result"></div>
 
 <script>
 
-document.getElementById("status").innerHTML +=
-    "<br>JavaScript OK";
+document.getElementById("result").innerHTML +=
+    "URL: " + window.location.href + "<br><br>";
 
-document.getElementById("status").innerHTML +=
-    "<br>window.webex = " + typeof window.webex;
+document.getElementById("result").innerHTML +=
+    "User Agent:<br>" +
+    navigator.userAgent + "<br><br>";
 
-console.log(window.webex);
+document.getElementById("result").innerHTML +=
+    "window.webex = " + typeof window.webex;
 
 </script>
 
