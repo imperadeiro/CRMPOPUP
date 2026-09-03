@@ -1,65 +1,37 @@
 <!DOCTYPE html>
-<html lang="pt">
-<head>
-<meta charset="UTF-8">
-<title>CRM Screen Pop</title>
-
-<style>
-body{
-    font-family: Arial;
-    padding:20px;
-    background:#f4f4f4;
-}
-
-button{
-    background:#0096D6;
-    color:white;
-    border:none;
-    padding:10px 20px;
-    border-radius:5px;
-    cursor:pointer;
-}
-
-#resultado{
-    margin-top:15px;
-    color:green;
-    font-weight:bold;
-}
-</style>
-
-</head>
-
+<html>
 <body>
 
-<h2>CRM ScreenPop Activo</h2>
+<h1>Teste Webex</h1>
 
-<button id="btTeste">
-Testar abertura CRM
-</button>
-
-<div id="resultado">
-A aguardar teste...
-</div>
+<script srckg.com/@webex/embedded-app-frameworkscript>
 
 <script>
 
-document.getElementById("btTeste").addEventListener("click", function(){
+async function init() {
 
-    document.getElementById("resultado").innerHTML =
-        "A tentar abrir CRM...";
+    try {
 
-    const numero = "912345678";
+        await window.webex.app.initialize();
 
-    const url =
-      "https://intranet2.cpcdi.pt/Main/EscolheCliente/GuardaCookie?tipo=guardar&cod_cliente=25555?telefone=" +
-      numero;
+        document.body.innerHTML += "<br>Webex OK";
 
-    window.open(url, "_blank");
+        console.log("WEBEX");
+        console.log(window.webex);
 
-});
+    } catch (e) {
+
+        document.body.innerHTML += "<br>ERRO: " + e.message;
+
+        console.error(e);
+
+    }
+
+}
+
+init();
 
 </script>
 
 </body>
 </html>
-``
