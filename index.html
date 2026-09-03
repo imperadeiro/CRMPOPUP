@@ -1,35 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>CRM Screen Pop </title>
+<meta charset="utf-8">
+<title>CRM ScreenPop</title>
 </head>
 
 <body>
 
 <h2>CRM ScreenPop Activo</h2>
 
-<script src="https://unpkg.com/@webex/embedded-app-framework"></script>
+<button onclick="abrirCRM()">
+Testar CRM
+</button>
 
 <script>
 
-async function init() {
+function abrirCRM(){
 
-    try {
-
-        await window.webex.app.initialize();
-
-        console.log("Webex iniciado");
-
-    } catch(err) {
-
-        console.error(err);
-
-    }
+    window.open(
+        "https://meucrm.pt/contacto?telefone=912345678",
+        "_blank"
+    );
 
 }
-
-init();
 
 </script>
 
