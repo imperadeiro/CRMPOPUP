@@ -1,44 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt">
 <head>
-    <meta charset="utf-8">
-    <title>CRM ScreenPop</title>
+<meta charset="UTF-8">
+<title>CRM Screen Pop</title>
+
+<style>
+body{
+    font-family: Arial;
+    padding:20px;
+    background:#f4f4f4;
+}
+
+button{
+    background:#0096D6;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+#resultado{
+    margin-top:15px;
+    color:green;
+    font-weight:bold;
+}
+</style>
+
 </head>
+
 <body>
 
-<h2>CRM ScreenPop</h2>
+<h2>CRM ScreenPop Activo</h2>
 
-<script src="https://unpkg.com/@webex/embeddedkscript>
+<button id="btTeste">
+Testar abertura CRM
+</button>
+
+<div id="resultado">
+A aguardar teste...
+</div>
 
 <script>
 
-async function init() {
+document.getElementById("btTeste").addEventListener("click", function(){
 
-    try {
+    document.getElementById("resultado").innerHTML =
+        "A tentar abrir CRM...";
 
-        await window.webex.app.initialize();
+    const numero = "912345678";
 
-        document.body.innerHTML +=
-            "<p>Webex inicializado com sucesso</p>";
+    const url =
+      "https://intranet2.cpcdi.pt/Main/EscolheCliente/GuardaCookie?tipo=guardar&cod_cliente=25555?telefone=" +
+      numero;
 
-        console.log("Webex OK");
-        console.log(window.webex);
+    window.open(url, "_blank");
 
-    }
-    catch(ex) {
-
-        console.error(ex);
-
-        document.body.innerHTML +=
-            "<p>ERRO: " + ex.message + "</p>";
-
-    }
-
-}
-
-init();
+});
 
 </script>
 
 </body>
 </html>
+``
