@@ -2,34 +2,13 @@
 <html>
 <body>
 
-<h1>Teste Webex</h1>
-
-<script srckg.com/@webex/embedded-app-frameworkscript>
+<h1>Teste Webex 1</h1>
 
 <script>
 
-async function init() {
+document.body.innerHTML += "<br>JavaScript OK";
 
-    try {
-
-        await window.webex.app.initialize();
-
-        document.body.innerHTML += "<br>Webex OK";
-
-        console.log("WEBEX");
-        console.log(window.webex);
-
-    } catch (e) {
-
-        document.body.innerHTML += "<br>ERRO: " + e.message;
-
-        console.error(e);
-
-    }
-
-}
-
-init();
+console.log("JS OK");
 
 </script>
 
